@@ -1,0 +1,48 @@
+[project]
+name = "{{ cookiecutter.package_name }}"
+version = "0.1.0"
+description = "{{ cookiecutter.project_description }}"
+readme = "README.md"
+requires-python = ">={{ cookiecutter.python_version }}"
+authors = [
+    { name = "{{ cookiecutter.author_name }}" }
+]
+
+dependencies = [
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.6",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "pytest-asyncio>=0.24.0",
+    "jupyter>=1.1.0",
+    "ipykernel>=6.29.0",
+    "ipywidgets>=8.1.0",
+    "dvc>=3.58.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py{{ cookiecutter.python_version.replace('.', '') }}"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF", "PT", "ANN", "S"]
+ignore = ["ANN101", "ANN102"]  # Allow missing type hints for self/cls in notebooks
+
+[tool.ruff.lint.isort]
+known-first-party = ["{{ cookiecutter.package_name }}"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "--cov={{ cookiecutter.package_name }} --cov-report=term-missing"
