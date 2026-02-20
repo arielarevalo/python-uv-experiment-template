@@ -87,6 +87,15 @@ uvx ty check
 - Always commit with passing tests (for `src/` utilities)
 - Update README "Results Summary" section when completing experiments
 
+### Paper
+
+```bash
+# Build the PDF (requires pdflatex and bibtex)
+bash paper/build.sh
+```
+
+Edit sections in `paper/sections/`. The output PDF is `paper/main.pdf` (gitignored).
+
 ## Common Workflows
 
 ### Starting a New Experiment

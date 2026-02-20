@@ -58,6 +58,16 @@ outputs/
 # DVC
 /dvc.lock
 
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+paper/*.pdf
+
 # OS
 .DS_Store
 Thumbs.db

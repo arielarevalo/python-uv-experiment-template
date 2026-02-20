@@ -80,6 +80,17 @@ uv run ruff format .
 uvx ty check
 ```
 
+## Paper
+
+The `paper/` directory contains a LaTeX manuscript in IEEE conference format.
+
+```bash
+# Build the PDF (requires pdflatex and bibtex)
+bash paper/build.sh
+```
+
+The output PDF is saved to `paper/main.pdf` (gitignored).
+
 ## Project Structure
 
 ```
@@ -91,6 +102,11 @@ uvx ty check
 ├── tests/              # Tests for src/ utilities
 ├── data/               # Input datasets (gitignored)
 ├── outputs/            # Experiment results (gitignored)
+├── paper/              # LaTeX manuscript (IEEE format)
+│   ├── main.tex        # Main document
+│   ├── sections/       # Section files
+│   ├── references.bib  # Bibliography
+│   └── build.sh        # Build script
 ├── .dvc/               # DVC configuration
 ├── pyproject.toml      # Project metadata and dependencies
 └── README.md           # This file
