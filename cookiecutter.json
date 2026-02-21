@@ -4,5 +4,11 @@
   "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
   "project_description": "A Python experiment for model exploration and analysis",
   "author_name": "Your Name",
-  "python_version": "3.13"
+  "python_version": "3.13",
+  "_copy_without_render": [
+    "paper/IEEEtran.cls",
+    "paper/build.sh",
+    "paper/references.bib",
+    "paper/sections/*"
+  ]
 }

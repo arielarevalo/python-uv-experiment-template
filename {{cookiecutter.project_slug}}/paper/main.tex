@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+{% raw %}\documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -10,14 +10,14 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
-
-\title{{ '{{' }} cookiecutter.project_name {{ '}}' }}
+{% endraw %}
+\title{ {{- cookiecutter.project_name -}} }
 
 \author{
-\IEEEauthorblockN{{ '{' }}{{ '{{' }} cookiecutter.author_name {{ '}}' }}{{ '}' }}
+\IEEEauthorblockN{ {{- cookiecutter.author_name -}} }
 }
 
-\maketitle
+{% raw %}\maketitle
 
 \input{sections/abstract}
 \input{sections/introduction}
@@ -31,3 +31,4 @@
 \bibliography{references}
 
 \end{document}
+{% endraw %}
